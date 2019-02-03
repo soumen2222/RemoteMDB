@@ -5,7 +5,8 @@ In this article we are going to discuss about consuming messages from a remote W
 a)	Section 1:
 
 Data can be sent from one application to other, which are hosted in different machines, through messaging, webservices etc.  Messaging has many advantages such as asynchronous, reliable communication, decoupling or disconnected operation , and mediation.
-Let us consider this use case where there is a need to modify the application (application 2) data whenever there is a change in application 1 , and due to scalability reason there are multiple instances of application 2. High level deployment is depicted below.
+Let us consider this use case , The application (application 2) data should be modified or refreshed whenever there is a change in the application 1 , and due to scalability reasons there are multiple instances of application 2. High level deployment is depicted below.
+
 One way: Application 1 can maintain the list of application2 servers and whenever there is a need to send data to application server, it can go over all the servers and send data via webservices. But this becomes a headache when new machines are spawned on demand or removed due to maintenance or other issues. Application 1 should continuously update the server details and handle the webservice push exception in case of server unavailability. 
 
 ![Alt text](/images/Deployment.png?raw=true "Listeners")
