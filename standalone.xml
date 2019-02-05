@@ -254,7 +254,6 @@
             <log-system-exceptions value="true"/>
 	</subsystem>
 	<subsystem xmlns="urn:jboss:domain:io:3.0">
-	    <worker name="httpworker" io-threads="16" task-keepalive="90" task-max-threads="128"/>
 	    <worker name="default" io-threads="8" task-keepalive="60" task-max-threads="128"/>
 	    <buffer-pool name="default"/>
         </subsystem>
@@ -406,7 +405,7 @@
             <buffer-cache name="default"/>
             <server name="default-server">
                 <ajp-listener name="ajp" socket-binding="ajp" scheme="https"/>
-                <http-listener name="default" socket-binding="http" worker="httpworker" redirect-socket="https" enable-http2="true"/>
+                <http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true"/>
                 <https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true"/>
                 <host name="default-host" alias="localhost">
                     <location name="/" handler="welcome-content"/>
